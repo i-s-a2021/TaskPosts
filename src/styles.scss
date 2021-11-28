@@ -1,0 +1,92 @@
+@import './scss/variables';
+@import './scss/material';
+@import './scss/theme';
+@import './scss/utils';
+@import './scss/responsive';
+@import '~ngx-toastr/toastr';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+.mat-table .mat-row {
+  cursor: pointer;
+}
+.mat-table .mat-cell{
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  text-align: start;
+  font-weight: bold;
+  color:black
+
+}
+mat-progress-spinner {
+  top: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 955;
+}
+
+.mat-table {
+  width: 100%;
+  overflow: hidden;
+}
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1){
+  flex: 0 0 5%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.mat-cell:nth-child(2),
+.mat-header-cell:nth-child(2){
+  flex: 0 0 95%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+@media(max-width: 768px) {
+  .mat-table .mat-row {
+    overflow-y: auto;
+    word-wrap: break-word;
+    font-size:12px
+  }
+
+  .mat-table .mat-cell {
+    font-size: 12px;
+  }
+  .mat-table .mat-tab-label{
+    font-size:12px
+  }
+
+  .mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1){
+  flex: 0 0 5%;
+  color: black;
+  font-weight: bold;
+  font-size:12px
+}
+
+.mat-cell:nth-child(2),
+.mat-header-cell:nth-child(2){
+  flex: 0 0 95%;
+  color: black;
+  font-weight: bold;
+  font-size:12px
+}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

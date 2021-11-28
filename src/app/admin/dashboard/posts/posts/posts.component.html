@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+
+  <div class="form">
+    <mat-form-field floatPlaceholder="never" color="accent">
+      <input matInput (keyup)="applyFilter($event.target.value)"  placeholder="Search Here">
+    </mat-form-field>
+  </div>
+  <mat-table #table [dataSource]="dataSource"  matSort class="mat-cell">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        {{row.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        {{row.title}}</mat-cell>
+    </ng-container>
+
+    <!-- actions -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/displayPost', row.id]"></mat-row>
+  </mat-table>
+
+
+  <!-- <div class="no-results" [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
+    No results
+  </div> -->
+
+  <mat-paginator #paginator  [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+</div>
